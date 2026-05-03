@@ -191,3 +191,17 @@ export const mockSettings: Settings = {
   meta_title: "Garasirumahan - Showroom Mobil Bekas Terpercaya",
   meta_description: "Temukan mobil bekas berkualitas dengan harga transparan, dokumen lengkap, dan garansi mesin. Pilihan terbaik di Garasirumahan.",
 };
+
+export function getCarBySlug(slug: string): Car | undefined {
+  return mockCars.find(car => car.slug === slug);
+}
+
+export function getRelatedCars(currentCar: Car, limit = 4): Car[] {
+  const sameBrand = mockCars.filter(
+    c => c.brand === currentCar.brand && c.id !== currentCar.id
+  );
+  const others = mockCars.filter(
+    c => c.brand !== currentCar.brand && c.id !== currentCar.id
+  );
+  return [...sameBrand, ...others].slice(0, limit);
+}
