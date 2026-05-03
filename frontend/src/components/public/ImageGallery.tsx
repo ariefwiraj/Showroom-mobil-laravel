@@ -41,7 +41,7 @@ export function ImageGallery({ car }: ImageGalleryProps) {
             onClick={() => setActiveIndex(index)}
             className={`relative flex-shrink-0 h-16 w-20 sm:h-20 sm:w-28 rounded-md overflow-hidden bg-slate-100 border-2 transition-all duration-300 ${
               activeIndex === index 
-                ? 'border-[var(--color-primary)] opacity-100 ring-2 ring-[var(--color-primary)] ring-offset-1' 
+                ? 'border-[var(--color-primary)] opacity-100' 
                 : 'border-transparent opacity-60 hover:opacity-100'
             }`}
           >

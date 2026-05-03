@@ -35,7 +35,7 @@ export function CarCard({ car }: CarCardProps) {
         {/* Content */}
         <CardContent className="p-5 flex flex-col justify-between flex-1">
           <div>
-            <h3 className="text-lg font-semibold text-slate-900 line-clamp-1 group-hover:text-[var(--color-primary)] transition-colors">
+            <h3 className="text-lg font-semibold text-slate-900 line-clamp-1 group-hover:text-[var(--color-primary)] transition-colors mt-2">
               {car.name}
             </h3>
             <p className="mt-2 text-xl font-bold text-[var(--color-primary)]">

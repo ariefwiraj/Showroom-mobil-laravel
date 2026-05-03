@@ -35,9 +35,6 @@ export function Footer() {
                 <Link href="/katalog" className="text-white/60 hover:text-white transition-colors">Katalog Mobil</Link>
               </li>
               <li>
-                <Link href="/tentang" className="text-white/60 hover:text-white transition-colors">Tentang Kami</Link>
-              </li>
-              <li>
                 <Link href="/kontak" className="text-white/60 hover:text-white transition-colors">Hubungi Kami</Link>
               </li>
             </ul>

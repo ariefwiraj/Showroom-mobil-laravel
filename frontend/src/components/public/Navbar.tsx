@@ -10,7 +10,6 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { href: "/", label: "Beranda" },
   { href: "/katalog", label: "Katalog" },
-  { href: "/tentang", label: "Tentang" },
   { href: "/kontak", label: "Kontak" },
 ];
 
@@ -21,11 +20,19 @@ export function Navbar() {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
+    
+    // Initial check on mount
+    handleScroll();
+    
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Check if we are on home page to determine transparency
+  const isHomePage = pathname === "/";
+  const showTransparent = isHomePage && !isScrolled;
 
   // Close mobile menu on path change
   React.useEffect(() => {
@@ -35,10 +42,10 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
-        isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200 py-3"
-          : "bg-transparent py-5"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out py-4",
+        showTransparent
+          ? "bg-transparent"
+          : "bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200"
       )}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
