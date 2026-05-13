@@ -36,6 +36,7 @@ export function Navbar() {
 
   // Close mobile menu on path change
   React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     setIsMobileMenuOpen(false);
   }, [pathname]);
 

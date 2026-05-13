@@ -205,3 +205,19 @@ export function getRelatedCars(currentCar: Car, limit = 4): Car[] {
   );
   return [...sameBrand, ...others].slice(0, limit);
 }
+
+export const mockMonthlyData = [
+  { month: "Jan", count: 2 },
+  { month: "Feb", count: 3 },
+  { month: "Mar", count: 5 },
+  { month: "Apr", count: 4 },
+  { month: "May", count: 6 },
+  { month: "Jun", count: 3 },
+];
+
+export const mockUser = {
+  id: 1,
+  name: "Admin Garasirumahan",
+  email: "admin@garasirumahan.com",
+  role: "admin" as const,
+};
